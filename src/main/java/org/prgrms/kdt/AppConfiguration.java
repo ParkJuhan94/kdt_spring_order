@@ -1,0 +1,40 @@
+package org.prgrms.kdt;
+
+import java.util.Optional;
+import java.util.UUID;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class AppConfiguration {
+
+    @Bean
+    public VoucherRepository voucherRepository() {
+        return new VoucherRepository() {
+            @Override
+            public Optional<Voucher> findById(UUID voucherId) {
+                return Optional.empty();
+            }
+        };
+    }
+
+    @Bean
+    public OrderRepository orderRepository() {
+        return new OrderRepository() {
+            @Override
+            public void insert(Order order) {
+
+            }
+        };
+    }
+
+    @Bean
+    public VoucherService voucherService() {
+        return new VoucherService(voucherRepository());
+    }
+
+    @Bean
+    public OrderService orderService() {
+        return new OrderService(voucherService(), orderRepository());
+    }
+}
