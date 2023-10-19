@@ -1,7 +1,6 @@
-package org.prgrms.kdt.domain.voucher;
+package org.prgrms.kdt.voucher;
 
 import java.util.UUID;
-import org.prgrms.kdt.domain.voucher.Voucher;
 
 public class FixedAmountVoucher implements Voucher {
 
@@ -15,7 +14,7 @@ public class FixedAmountVoucher implements Voucher {
 
     @Override
     public UUID getVoucherId() {
-        return null;
+        return voucherId;
     }
 
     public long discount(long beforeDiscount) {

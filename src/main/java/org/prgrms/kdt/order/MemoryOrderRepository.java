@@ -1,9 +1,8 @@
-package org.prgrms.kdt.repository;
+package org.prgrms.kdt.order;
 
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
-import org.prgrms.kdt.domain.Order;
 import org.springframework.stereotype.Repository;
 
 @Repository

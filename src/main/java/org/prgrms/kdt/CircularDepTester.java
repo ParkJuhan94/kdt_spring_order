@@ -20,7 +20,7 @@ class B {
     }
 }
 
-//@Configuration
+@Configuration
 class CircularConfig {
     @Bean
     public A a(B b) {

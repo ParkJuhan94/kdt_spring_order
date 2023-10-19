@@ -1,9 +1,9 @@
-package org.prgrms.kdt.domain;
+package org.prgrms.kdt.order;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-import org.prgrms.kdt.domain.voucher.Voucher;
+import org.prgrms.kdt.voucher.Voucher;
 
 public class Order {
     private final UUID orderId;

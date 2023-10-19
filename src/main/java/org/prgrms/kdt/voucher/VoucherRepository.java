@@ -1,8 +1,8 @@
-package org.prgrms.kdt.repository;
+package org.prgrms.kdt.voucher;
 
 import java.util.Optional;
 import java.util.UUID;
-import org.prgrms.kdt.domain.voucher.Voucher;
+import org.prgrms.kdt.voucher.Voucher;
 
 public interface VoucherRepository {
 

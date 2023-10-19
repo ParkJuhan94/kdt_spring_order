@@ -1,9 +1,8 @@
-package org.prgrms.kdt.service;
+package org.prgrms.kdt.voucher;
 
 import java.text.MessageFormat;
 import java.util.UUID;
-import org.prgrms.kdt.domain.voucher.Voucher;
-import org.prgrms.kdt.repository.VoucherRepository;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -11,7 +10,7 @@ public class VoucherService {
 
     private final VoucherRepository voucherRepository;
 
-    public VoucherService(VoucherRepository voucherRepository) {
+    public VoucherService(@Qualifier("memory") VoucherRepository voucherRepository) {
         this.voucherRepository = voucherRepository;
     }
 
@@ -22,5 +21,6 @@ public class VoucherService {
     }
 
     public void userVoucher(Voucher voucher) {
+
     }
 }
