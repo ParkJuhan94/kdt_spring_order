@@ -23,18 +23,17 @@ public class AppConfiguration {
         return new OrderRepository() {
             @Override
             public void insert(Order order) {
-
             }
         };
     }
 
     @Bean
-    public VoucherService voucherService() {
-        return new VoucherService(voucherRepository());
+    public VoucherService voucherService(VoucherRepository voucherRepository) {
+        return new VoucherService(voucherRepository);
     }
 
     @Bean
-    public OrderService orderService() {
-        return new OrderService(voucherService(), orderRepository());
+    public OrderService orderService(VoucherService voucherService, OrderRepository orderRepository) {
+        return new OrderService(voucherService, orderRepository);
     }
 }
