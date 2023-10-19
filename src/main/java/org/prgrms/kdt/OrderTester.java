@@ -18,8 +18,12 @@ public class OrderTester {
 
         var customerId = UUID.randomUUID();
 
-        var voucherRepository = BeanFactoryAnnotationUtils.qualifiedBeanOfType(
-            applicationContext.getBeanFactory(), VoucherRepository.class, "memory");
+        var voucherRepository = BeanFactoryAnnotationUtils.qualifiedBeanOfType(applicationContext.getBeanFactory(), VoucherRepository.class, "memory");
+        var voucherRepository2 = BeanFactoryAnnotationUtils.qualifiedBeanOfType(applicationContext.getBeanFactory(), VoucherRepository.class, "memory");
+        System.out.println(MessageFormat.format("voucherRepository = {0}", voucherRepository));
+        System.out.println(MessageFormat.format("voucherRepository2 = {0}", voucherRepository2));
+        System.out.println(MessageFormat.format("voucherRepository == voucherRepository2 => {0}", voucherRepository == voucherRepository2));
+
 
         var voucher = voucherRepository.insert(new FixedAmountVoucher(UUID.randomUUID(), 10L));
 
@@ -33,5 +37,7 @@ public class OrderTester {
 
         Assert.isTrue(order.totalAmount() == 90L,
             MessageFormat.format("totalAmount {0}L is not 90L ", order.totalAmount()));
+
+        applicationContext.close();
     }
 }
