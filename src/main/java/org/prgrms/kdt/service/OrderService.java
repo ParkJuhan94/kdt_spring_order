@@ -1,8 +1,13 @@
-package org.prgrms.kdt;
+package org.prgrms.kdt.service;
 
 import java.util.List;
 import java.util.UUID;
+import org.prgrms.kdt.domain.Order;
+import org.prgrms.kdt.domain.OrderItem;
+import org.prgrms.kdt.repository.OrderRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class OrderService {
 
     private final VoucherService voucherService;
@@ -15,8 +20,7 @@ public class OrderService {
 
     public Order createOrder(UUID customerId, List<OrderItem> orderItems) {
         var order = new Order(UUID.randomUUID(), customerId, orderItems);
-        orderRepository.insert(order);
-        return order;
+        return orderRepository.insert(order);
     }
 
     public Order createOrder(UUID customerId, List<OrderItem> orderItems, UUID voucherId) {

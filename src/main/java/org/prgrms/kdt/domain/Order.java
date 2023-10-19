@@ -1,8 +1,9 @@
-package org.prgrms.kdt;
+package org.prgrms.kdt.domain;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import org.prgrms.kdt.domain.voucher.Voucher;
 
 public class Order {
     private final UUID orderId;
@@ -35,5 +36,9 @@ public class Order {
 
     public void setOrderStatus(OrderStatus orderStatus) {
         this.orderStatus = orderStatus;
+    }
+
+    public UUID getOrderId() {
+        return orderId;
     }
 }

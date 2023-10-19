@@ -3,6 +3,8 @@ package org.prgrms.kdt;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.UUID;
+import org.prgrms.kdt.domain.OrderItem;
+import org.prgrms.kdt.service.OrderService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.util.Assert;
 
